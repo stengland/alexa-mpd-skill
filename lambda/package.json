@@ -1,0 +1,18 @@
+{
+  "name": "alexa-mpd-skill",
+  "version": "1.2.0",
+  "description": "alexa skill for controlling MPD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amazon Alexa",
+  "license": "Apache License",
+  "dependencies": {
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.19.0",
+    "aws-sdk": ">=2.814.0",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.9.0",
+    "mpd-api": "^1.1.0"
+  }
+}

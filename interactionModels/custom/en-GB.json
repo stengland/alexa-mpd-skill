@@ -1,0 +1,229 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "my jukebox",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.LoopOffIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.LoopOnIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": [
+            "go next",
+            "next track",
+            "skip",
+            "play next"
+          ]
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": [
+            "previous track",
+            "go to previous track",
+            "play last track",
+            "go back"
+          ]
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ShuffleOffIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ShuffleOnIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayAlbum",
+          "slots": [
+            {
+              "name": "AlbumName",
+              "type": "AMAZON.MusicAlbum",
+              "samples": [
+                "{AlbumName} by {ArtistName}"
+              ]
+            },
+            {
+              "name": "ArtistName",
+              "type": "AMAZON.MusicGroup"
+            },
+            {
+              "name": "AlbumSearch",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "play the album {AlbumSearch}",
+            "play the album {AlbumName} by {ArtistName}",
+            "play the album {AlbumName}"
+          ]
+        },
+        {
+          "name": "PlaySixMusic",
+          "slots": [],
+          "samples": [
+            "play six music"
+          ]
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayOneFM",
+          "slots": [],
+          "samples": [
+            "play one f. m.",
+            "Play one F M"
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlayAlbum",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "AlbumName",
+              "type": "AMAZON.MusicAlbum",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1369499581886.5667563347"
+              }
+            },
+            {
+              "name": "ArtistName",
+              "type": "AMAZON.MusicGroup",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "AlbumSearch",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1369499581886.5667563347",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say the album and artist"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.837415070919.1192885191470.417935199921",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Say a valid station"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.589991918952.269083327797.1142257618682",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to play?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1067747977337.1588499584951.722267158561",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to play?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1067747977337.1588499584951",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to play?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1067747977337.605192937255",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to play?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1067747977337.439869298575",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to play?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.599457706736.85148090460.205270980571",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What do you want to do?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "42"
+}

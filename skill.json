@@ -1,0 +1,22 @@
+{
+  "manifest": {
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-GB": {
+          "examplePhrases": [
+            "Alexa open my jukebox",
+            "play the album Odelay by Beck",
+            "help"
+          ],
+          "keywords": [],
+          "name": "My Jukebox",
+          "summary": "Simple Alexa skill to control MPD"
+        }
+      }
+    }
+  }
+}
