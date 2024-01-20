@@ -4,6 +4,7 @@ const mpdapi = require('mpd-api');
 const config = {
   port: 6600,
   host: 'my.publicmpdhost.com',
+  streaming: 'https://radio.publicmpdhost.com/'
 };
 const controlIntents = {
     'AMAZON.NextIntent' : "next",
@@ -39,6 +40,8 @@ const ControlIntentHandler = {
         await client.disconnect()
 
         return handlerInput.responseBuilder
+            .addAudioPlayerPlayDirective('REPLACE_ALL', config.streaming, "1", 0)
+            .withShouldEndSession(true)
             .getResponse();
     }
 };

@@ -1,22 +1,76 @@
 {
   "manifest": {
-    "manifestVersion": "1.0",
     "publishingInformation": {
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": [],
-      "isAvailableWorldwide": true,
       "locales": {
         "en-GB": {
+          "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open my jukebox",
-            "play the album Odelay by Beck",
+            "Alexa, open my jukebox",
+            "hello",
             "help"
           ],
           "keywords": [],
           "name": "My Jukebox",
-          "summary": "Simple Alexa skill to control MPD"
+          "description": "Sample Full Description",
+          "smallIconUri": "file://assets/images/en-GB_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-GB_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "{\"ask_dist_username\":\"\",\"ask_dist_password\":\"\",\"ask_dist_testing_instructions\":\"Sample Testing Instructions.\"}",
+      "category": "STREAMING_SERVICE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:eu-west-1:917435200585:function:8fa1c3fd-8652-4486-818a-1620524691e4:Release_0"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ],
+        "locales": {},
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:917435200585:function:8fa1c3fd-8652-4486-818a-1620524691e4:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:917435200585:function:8fa1c3fd-8652-4486-818a-1620524691e4:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:917435200585:function:8fa1c3fd-8652-4486-818a-1620524691e4:Release_0"
+            }
+          }
         }
       }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-GB": {
+          "termsOfUseUrl": "https://www.privacy.com",
+          "privacyPolicyUrl": "https://www.privacy.com"
+        }
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "shoppingKit": {
+        "isShoppingActionsEnabled": false,
+        "isAmazonAssociatesOnAlexaEnabled": false
+      },
+      "usesPersonalInfo": false
     }
   }
 }

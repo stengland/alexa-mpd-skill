@@ -1,7 +1,41 @@
 {
   "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "AlbumName",
+              "elicitationRequired": true,
+              "type": "AMAZON.MusicAlbum",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1369499581886.5667563347"
+              }
+            },
+            {
+              "name": "ArtistName",
+              "elicitationRequired": false,
+              "type": "AMAZON.MusicGroup",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "AlbumSearch",
+              "elicitationRequired": false,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "PlayAlbum",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
     "languageModel": {
-      "invocationName": "my jukebox",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -66,7 +100,6 @@
           "samples": []
         },
         {
-          "name": "PlayAlbum",
           "slots": [
             {
               "name": "AlbumName",
@@ -84,6 +117,7 @@
               "type": "AMAZON.SearchQuery"
             }
           ],
+          "name": "PlayAlbum",
           "samples": [
             "play the album {AlbumSearch}",
             "play the album {AlbumName} by {ArtistName}",
@@ -91,8 +125,8 @@
           ]
         },
         {
-          "name": "PlaySixMusic",
           "slots": [],
+          "name": "PlaySixMusic",
           "samples": [
             "play six music"
           ]
@@ -106,124 +140,140 @@
           "samples": []
         },
         {
-          "name": "PlayOneFM",
           "slots": [],
+          "name": "PlayOneFM",
           "samples": [
-            "play one f. m.",
             "Play one F M"
           ]
         }
-      ]
-    },
-    "dialog": {
-      "intents": [
+      ],
+      "types": [
         {
-          "name": "PlayAlbum",
-          "confirmationRequired": false,
-          "prompts": {},
-          "slots": [
+          "values": [
             {
-              "name": "AlbumName",
-              "type": "AMAZON.MusicAlbum",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Slot.1369499581886.5667563347"
+              "name": {
+                "value": "record"
               }
             },
             {
-              "name": "ArtistName",
-              "type": "AMAZON.MusicGroup",
-              "elicitationRequired": false,
-              "confirmationRequired": false,
-              "prompts": {}
+              "name": {
+                "value": "EP"
+              }
             },
             {
-              "name": "AlbumSearch",
-              "type": "AMAZON.SearchQuery",
-              "elicitationRequired": false,
-              "confirmationRequired": false,
-              "prompts": {}
+              "name": {
+                "value": "single"
+              }
+            },
+            {
+              "name": {
+                "value": "album"
+              }
             }
-          ]
+          ],
+          "name": "AMAZON.CreativeWorkType"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "queue the"
+              }
+            },
+            {
+              "name": {
+                "value": "queue"
+              }
+            },
+            {
+              "name": {
+                "value": "play the"
+              }
+            },
+            {
+              "name": {
+                "value": "play"
+              }
+            }
+          ],
+          "name": "Action"
         }
       ],
-      "delegationStrategy": "ALWAYS"
+      "invocationName": "my jukebox"
     },
     "prompts": [
       {
-        "id": "Elicit.Slot.1369499581886.5667563347",
         "variations": [
           {
             "type": "PlainText",
             "value": "Please say the album and artist"
           }
-        ]
+        ],
+        "id": "Elicit.Slot.1369499581886.5667563347"
       },
       {
-        "id": "Slot.Validation.837415070919.1192885191470.417935199921",
         "variations": [
           {
             "type": "PlainText",
             "value": "Say a valid station"
           }
-        ]
+        ],
+        "id": "Slot.Validation.837415070919.1192885191470.417935199921"
       },
       {
-        "id": "Slot.Validation.589991918952.269083327797.1142257618682",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to play?"
           }
-        ]
+        ],
+        "id": "Slot.Validation.589991918952.269083327797.1142257618682"
       },
       {
-        "id": "Slot.Validation.1067747977337.1588499584951.722267158561",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to play?"
           }
-        ]
+        ],
+        "id": "Slot.Validation.1067747977337.1588499584951.722267158561"
       },
       {
-        "id": "Elicit.Slot.1067747977337.1588499584951",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to play?"
           }
-        ]
+        ],
+        "id": "Elicit.Slot.1067747977337.1588499584951"
       },
       {
-        "id": "Elicit.Slot.1067747977337.605192937255",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to play?"
           }
-        ]
+        ],
+        "id": "Elicit.Slot.1067747977337.605192937255"
       },
       {
-        "id": "Elicit.Slot.1067747977337.439869298575",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to play?"
           }
-        ]
+        ],
+        "id": "Elicit.Slot.1067747977337.439869298575"
       },
       {
-        "id": "Slot.Validation.599457706736.85148090460.205270980571",
         "variations": [
           {
             "type": "PlainText",
             "value": "What do you want to do?"
           }
-        ]
+        ],
+        "id": "Slot.Validation.599457706736.85148090460.205270980571"
       }
     ]
-  },
-  "version": "42"
+  }
 }
